@@ -2,6 +2,8 @@
 
 A polished, responsive appointment workspace for a fictional salon. Built with Next.js App Router, TypeScript, Tailwind CSS 4, and Lucide icons.
 
+**[View the live demo →](https://forma-booking.netlify.app/)**
+
 ## Run locally
 
 Requires Node.js 20.9+ and npm.
