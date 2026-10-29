@@ -1,0 +1,182 @@
+/* DM Sans brings one consistent, locally hosted typographic voice to the studio. */
+body { font-family: var(--font-ui), 'Segoe UI', sans-serif; font-size: 14px; font-optical-sizing: auto; }
+button, input, select, textarea { font-family: inherit; }
+.brand, .workspace-icon, .staff-photo, .page-heading h1, .flow-banner h2, .popular-panel h2,
+.service-card h2, .history-panel .panel-heading h2, .demo-info h3, .form-section-title h2,
+.detail-body > h2, .booking-intro h1, .confirmation > h1, .confirmation-ticket h2, .empty-state h3, .loading {
+  font-family: var(--font-ui), 'Segoe UI', sans-serif;
+}
+.brand { font-weight: 750; font-size: 37px; letter-spacing: -2.4px; gap: 8px; }
+.brand > svg { width: 32px; height: 32px; }
+.sidebar { width: 248px; padding-top: 30px; background: #fcfdf9; }
+.main-wrap { margin-left: 248px; }
+.workspace { margin-top: 30px; margin-bottom: 28px; padding: 12px; gap: 10px; background: white; border-color: #e0e6d7; }
+.workspace-icon { width: 35px; height: 35px; border-radius: 10px; font-size: 19px; font-weight: 650; background: #eaf0df; }
+.workspace strong { font-size: 12px; font-weight: 650; letter-spacing: -.2px; }
+.workspace small { display: flex; align-items: center; gap: 6px; font-size: 9px; white-space: nowrap; }
+.workspace-plan { font-size: 7px; font-weight: 650; letter-spacing: .6px; padding: 2px 4px; border: 1px solid #e0e7d7; border-radius: 4px; background: #f5f7f0; color: #6e8057; }
+.nav-label { font-size: 9px; font-weight: 650; letter-spacing: 1.7px; padding-left: 15px; }
+.nav-item { height: 46px; min-height: 46px; padding: 12px 14px; gap: 12px; font-size: 12px; font-weight: 450; margin-bottom: 6px; color: #737e68; }
+.nav-item svg { stroke-width: 1.7; flex-shrink: 0; }
+.nav-item.active { color: #455d32; font-weight: 650; }
+.sidebar nav::before { height: 46px; transform: translateY(calc(var(--active-index, 0) * 52px)); border-color: #dce7cd; background: linear-gradient(100deg, #e7efdc, #eef3e6); border-radius: 10px; }
+.nav-count { min-width: 23px; text-align: center; font-size: 10px; padding: 3px 6px; border-radius: 6px; background: #dfe8d1; font-weight: 600; }
+.sidebar-bottom > .nav-item { font-size: 11px; height: 42px; min-height: 42px; gap: 9px; margin-bottom: 2px; }
+.booking-link-card { background: linear-gradient(145deg, #f0f3e8, #f5f6ed); padding: 17px 15px; }
+.booking-link-card strong { font-size: 11px; line-height: 1.6; font-weight: 650; }
+.booking-link-card p { font-size: 10px; line-height: 1.8; }
+.booking-link-card button { font-size: 10px; font-weight: 600; }
+.profile { gap: 10px; padding-top: 17px; padding-bottom: 17px; background: #f9fbf5; }
+.profile strong { font-size: 12px; font-weight: 650; }
+.profile small { font-size: 10px; }
+.profile > .avatar { width: 35px; height: 35px; }
+.profile[aria-expanded="true"], .workspace[aria-expanded="true"] { background: #eef3e5; box-shadow: 0 0 0 3px #b4c59b18; }
+.menu-chevron { flex-shrink: 0; transition: transform 300ms var(--ease-flow); }
+[aria-expanded="true"] > .menu-chevron { transform: rotate(180deg); }
+.breadcrumb { font-size: 12px; gap: 12px; }
+.breadcrumb strong { font-weight: 600; }
+.demo-badge { font-size: 10px; font-weight: 500; }
+.page-heading h1 { font-size: clamp(29px, 2.45vw, 38px); font-weight: 550; letter-spacing: -1.5px; line-height: 1.18; margin-top: 12px; }
+.heading-dot { font-size: 29px; font-weight: 400; margin-left: 13px; }
+.page-heading p { font-size: 12px; line-height: 1.75; margin-top: 12px; }
+.eyebrow { font-weight: 650; font-size: 9px; letter-spacing: 1.55px; }
+.btn { font-size: 12px; font-weight: 550; padding: 11px 14px; }
+.heading-actions .btn { font-size: 11px; }
+.segmented button { font-size: 11px; font-weight: 500; padding: 8px 13px; }
+.date-control input { font-family: inherit; font-size: 11px; }
+.stat-label { font-size: 12px; font-weight: 450; }
+.stat-value { font-size: 35px; font-weight: 550; letter-spacing: -1.4px; margin: 17px 0 14px; }
+.stat-comparison { font-size: 10px; }
+.flow-banner h2 { font-size: 28px; font-weight: 550; letter-spacing: -1px; margin: 9px 0; }
+.flow-banner p { font-size: 11px; }
+.flow-banner > div:nth-child(2) > span { font-size: 8px; font-weight: 600; }
+.flow-banner button { font-size: 11px; font-weight: 500; }
+.panel-heading h2 { font-size: 14px; font-weight: 650; letter-spacing: -.3px; }
+.panel-heading p { font-size: 11px; line-height: 1.7; }
+.count-badge { font-family: inherit; font-size: 10px; border-radius: 6px; padding: 2px 6px; }
+.table-toolbar { gap: 8px; flex-wrap: wrap; }
+.table-toolbar .search-input { min-width: 160px; }
+.search-input { min-height: 38px; padding: 9px 11px; }
+.search-input input { font-size: 11px; }
+.search-input > span { font-size: 10px; border-radius: 4px; }
+th { font-size: 10px; font-weight: 550; padding: 12px 10px; }
+td { font-size: 11px; padding: 17px 10px; }
+.client-name, .service-name, .table-time { font-size: 12px; }
+.client-name { font-weight: 600; letter-spacing: -.25px; }
+td small { font-size: 10px; line-height: 1.6; }
+.client-cell { gap: 10px; }
+.avatar { font-size: 11px; font-weight: 600; }
+.client { width: 33px; height: 33px; font-size: 10px; }
+.team-cell { font-size: 11px; }
+.status { font-size: 9px; font-weight: 500; padding: 4px 7px; border-radius: 5px; }
+.table-footer { font-size: 10px; padding-top: 16px; padding-bottom: 16px; }
+.table-footer button { font-size: 10px; font-weight: 500; }
+.team-row strong { font-size: 11px; font-weight: 600; }
+.team-row small { font-size: 9px; }
+.staff-photo { font-size: 10px; font-weight: 600; }
+.team-bookings { font-size: 13px; font-weight: 550; }
+.team-bookings small { font-size: 8px; font-weight: 400; }
+.team-link { font-size: 10px; font-weight: 500; }
+.popular-panel h2 { font-size: 26px; font-weight: 550; letter-spacing: -.8px; }
+.popular-panel > p { font-size: 10px; }
+.popular-label { font-size: 8px; font-weight: 600; }
+.popular-service strong { font-size: 11px; font-weight: 600; }
+.popular-service small { font-size: 9px; line-height: 1.6; }
+.popular-panel > button { font-size: 10px; font-weight: 500; }
+.app-footer { font-size: 10px; line-height: 1.7; }
+.service-card h2 { font-size: 25px; font-weight: 550; letter-spacing: -.8px; }
+.service-card p { font-size: 12px; }
+.service-card-price span { font-size: 11px; }
+.section-bar h2 { font-size: 15px; font-weight: 600; }
+.section-bar > span { font-size: 11px; }
+.history-panel .panel-heading h2, .detail-body > h2 { font-size: 28px; font-weight: 550; letter-spacing: -1px; }
+.customer-list strong, .history-list strong { font-size: 12px; font-weight: 600; }
+.customer-list small, .history-list small { font-size: 10px; }
+.history-stats small { font-size: 11px; }
+.history-stats strong { font-weight: 550; letter-spacing: -.7px; }
+.calendar-title h2 { font-size: 15px; font-weight: 600; letter-spacing: -.3px; }
+.calendar-col-header { font-size: 12px; font-weight: 500; }
+.calendar-times span { font-size: 10px; }
+.calendar-event strong { font-size: 11px; font-weight: 600; }
+.calendar-event span { font-size: 10px; }
+.calendar-legend span { font-size: 11px; }
+.modal-heading h2 { font-size: 15px; font-weight: 600; letter-spacing: -.25px; }
+.form-section-title h2 { font-size: 28px; font-weight: 550; letter-spacing: -.9px; }
+.form-section-title p { font-size: 12px; }
+.form-label { font-size: 12px; font-weight: 550; }
+.form-label input, .form-label select, .form-label textarea { font-size: 13px; min-height: 44px; font-weight: 400; }
+.form-label select { appearance: none; padding-right: 36px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23778169' stroke-linecap='round' stroke-width='1.5'%3E%3Cpath d='m4 6 4 4 4-4'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; cursor: pointer; }
+.form-steps > span { font-size: 11px; }
+.time-grid button { font-size: 11px; padding: 11px 3px; font-weight: 500; }
+.booking-form-footer { font-size: 10px; }
+.label-hint { font-size: 10px; }
+.demo-note { font-size: 11px !important; }
+.demo-info h3 { font-size: 27px; font-weight: 550; letter-spacing: -.8px; }
+.days-picker button { font-size: 11px; font-weight: 500; }
+.public-tag { font-size: 10px; font-weight: 550; }
+.booking-intro h1 { font-size: clamp(49px, 5vw, 72px); font-weight: 500; line-height: 1.04; letter-spacing: -3.7px; }
+.booking-intro h1 em { font-style: normal; font-weight: 400; }
+.booking-intro > p { font-size: 14px; }
+.public-booking .form-section-title h2 { font-size: 27px; }
+.confirmation > h1 { font-size: 42px; font-weight: 550; letter-spacing: -1.8px; }
+.confirmation-ticket h2 { font-size: 24px; font-weight: 550; letter-spacing: -.7px; }
+.empty-state h3 { font-size: 25px; font-weight: 500; letter-spacing: -.7px; }
+
+/* Menus live above overflow containers and share the same keyboard interactions. */
+.select-menu-trigger { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 38px; border: 1px solid #e1e7d8; background: #fff; border-radius: 8px; padding: 9px 10px; font-size: 11px; color: #6b795e; white-space: nowrap; }
+.select-menu-trigger > span { max-width: 125px; overflow: hidden; text-overflow: ellipsis; }
+.select-menu-trigger > svg { flex-shrink: 0; }
+.select-menu-trigger:hover, .select-menu-trigger[aria-expanded="true"] { background: #f5f8ee; border-color: #bdcda9; }
+.select-menu-trigger[aria-expanded="true"] { box-shadow: 0 0 0 3px #a7b89015; }
+.floating-menu { position: fixed; z-index: 150; overflow-y: auto; overscroll-behavior: contain; padding: 6px; border: 1px solid #dfe6d6; border-radius: 13px; background: #fffffff7; backdrop-filter: blur(20px); box-shadow: 0 12px 40px #30451c16, 0 3px 9px #30451c08; color: #46563a; font-family: var(--font-ui), sans-serif; animation: menu-arrive 220ms var(--ease-flow) both; }
+.floating-menu[data-open="false"] { animation: menu-leave 150ms ease both; pointer-events: none; }
+.menu-section-label { padding: 9px 10px 10px; font-size: 9px; font-weight: 650; letter-spacing: 1.2px; text-transform: uppercase; color: #89947b; }
+.select-menu-option, .action-menu > button { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 39px; padding: 10px; border-radius: 8px; text-align: left; cursor: pointer; }
+.select-menu-option > span, .action-menu > button > span:last-child { flex: 1; min-width: 0; }
+.select-menu-option strong, .action-menu strong { display: block; font-size: 12px; line-height: 1.5; font-weight: 500; letter-spacing: -.1px; }
+.select-menu-option small, .action-menu small { display: block; font-size: 10px; line-height: 1.6; margin-top: 3px; color: #87947a; font-weight: 400; }
+.select-menu-option[data-highlighted="true"], .select-menu-option[aria-selected="true"], .action-menu > button:hover, .action-menu > button:focus-visible { background: #eef4e5; color: #4f6c35; }
+.select-menu-option[aria-selected="true"] strong { font-weight: 650; }
+.select-menu-option { transition: background-color 100ms ease, color 100ms ease; }
+.action-menu > button { padding: 11px 9px; gap: 10px; outline-offset: -2px; }
+.action-menu > button:active { transform: scale(.985); }
+.menu-item-icon { width: 31px; height: 31px; display: grid; place-items: center; flex-shrink: 0; border-radius: 8px; background: #f3f6ed; color: #7b8d67; }
+.action-menu > button:hover .menu-item-icon, .action-menu > button:focus-visible .menu-item-icon { background: #e3edd6; color: #5f7b45; }
+@keyframes menu-arrive { from { opacity: 0; translate: 0 -4px; scale: .98; } to { opacity: 1; translate: 0 0; scale: 1; } }
+@keyframes menu-leave { to { opacity: 0; translate: 0 -3px; scale: .985; } }
+
+@media (min-width: 1550px) { .page-heading h1 { font-size: 40px; }.stat-value { font-size: 39px; } }
+@media (max-width: 1250px) {
+  .sidebar { width: 220px; }.main-wrap { margin-left: 220px; }.workspace { padding: 10px; gap: 8px; }.workspace-plan { display: none; }
+  .page-heading h1 { font-size: 30px; }.heading-actions .btn { font-size: 10px; padding: 10px; }.stat-label { font-size: 11px; }.stat-comparison { font-size: 9px; }
+  .nav-item { font-size: 12px; }.team-row strong { font-size: 10px; }.team-row small { font-size: 8px; }.team-bookings small { font-size: 7px; }.team-bookings { font-size: 12px; }
+  .team-panel .panel-heading h2 { font-size: 12px; }.popular-panel h2 { font-size: 24px; }.popular-service small { font-size: 8px; }
+}
+@media (max-width: 800px) {
+  .sidebar { width: 210px; }.main-wrap { margin-left: 210px; }.page-heading h1 { font-size: 28px; }.page-heading p { font-size: 11px; }
+  .stat-label { font-size: 11px; }.stat-value { font-size: 33px; }.flow-banner h2 { font-size: 25px; }.flow-banner p { font-size: 10px; }
+  .segmented button { font-size: 10px; padding: 8px 9px; }.date-control input { font-size: 10px; min-width: 110px; }.heading-actions .btn { font-size: 10px; }
+  .right-column { grid-template-columns: 1fr; }.team-panel .team-list { flex-direction: row; flex-wrap: wrap; gap: 15px; }.team-row { min-width: 135px !important; }.team-panel .team-bookings { display: none; }
+  .popular-service small { display: block; }.popular-panel > button { margin-top: 20px; }.popular-service { margin: 20px 0; }.popular-service strong { font-size: 12px; }
+  .public-booking .form-section-title h2 { font-size: 24px; }.form-steps > span { font-size: 10px; }.app-footer { font-size: 9px; }
+}
+@media (max-width: 640px) {
+  .sidebar { width: 264px; }.main-wrap { margin-left: 0; }.sidebar .workspace-plan { display: inline-block; }.sidebar .workspace { padding: 12px; }.sidebar .nav-item { font-size: 13px; }
+  .sidebar-bottom > .nav-item { font-size: 11px; }.breadcrumb { font-size: 11px; gap: 8px; }.topbar-right { gap: 11px; }.demo-badge { font-size: 9px; }
+  .page-heading { flex-wrap: wrap; gap: 15px; }.page-heading h1 { font-size: 30px; max-width: none; letter-spacing: -1.3px; }.page-heading p { max-width: none; font-size: 12px; }
+  .heading-actions { flex-direction: row; padding-top: 0; width: 100%; }.heading-actions > .btn:first-child { display: inline-flex; }.heading-actions .btn { font-size: 11px; padding: 10px 12px; }
+  .page-heading .eyebrow { font-size: 8px; }.overview-toolbar { flex-wrap: wrap; gap: 10px; }.segmented button { font-size: 10px; padding: 8px 9px; }.date-control input { min-width: 116px; font-size: 11px; }
+  .stat-card { padding: 16px 14px; }.stat-label { font-size: 11px; }.stat-comparison { font-size: 9px; white-space: normal; line-height: 1.6; min-height: 28px; align-items: flex-start; }.stat-value { font-size: 32px; }
+  .stat-comparison > svg { flex-shrink: 0; margin-top: 1px; }.flow-banner { gap: 12px; }.flow-banner h2 { font-size: 24px; }.flow-banner > div:nth-child(2) > span { font-size: 7px; letter-spacing: .6px; }.flow-banner p { max-width: 230px; line-height: 1.7; }
+  .flow-banner button { font-size: 10px; }.panel-heading h2 { font-size: 14px; }.panel-heading p { font-size: 10px; }.table-toolbar { gap: 7px; }.table-toolbar .search-input { flex-basis: 100%; min-width: 0; }
+  .search-input input { font-size: 12px; }.search-input { min-height: 40px; }.select-menu-trigger { flex: 1; justify-content: flex-start; font-size: 11px; }.select-menu-trigger > .menu-chevron { margin-left: auto; }
+  .select-menu-trigger > span { max-width: 130px; }.table-footer { font-size: 9px; }.table-footer button { font-size: 9px; }.app-footer { flex-wrap: wrap; font-size: 9px; }
+  .app-footer > span:first-child { max-width: none; }.service-card h2 { font-size: 22px; }.service-card p { font-size: 11px; }.service-card .btn { font-size: 10px; }.section-bar > span { font-size: 9px; }
+  .team-row strong { font-size: 11px; }.team-row small { font-size: 9px; }.team-panel .panel-heading h2 { font-size: 14px; }.popular-panel h2 { font-size: 26px; }
+  .calendar-toolbar { gap: 12px; }.calendar-title h2 { font-size: 13px; }.calendar-toolbar .segmented button { font-size: 11px; }.calendar-col-header { font-size: 11px; }
+  .history-panel .panel-heading h2 { font-size: 26px; }.history-list strong { font-size: 11px; }.history-list small { font-size: 9px; }.history-stats small { font-size: 9px; }
+  .form-label input, .form-label select, .form-label textarea { font-size: 16px; }.form-section-title h2 { font-size: 26px; }.form-section-title p { font-size: 11px; }.time-grid button { font-size: 11px; }
+  .public-booking .form-section-title h2 { font-size: 26px; }.booking-intro h1 { font-size: 54px; letter-spacing: -2.8px; }.booking-intro > p { font-size: 13px; }.public-header .btn { font-size: 10px; }
+  .confirmation > h1 { font-size: 35px; }.confirmation-ticket h2 { font-size: 23px; }.floating-menu { border-radius: 14px; }.select-menu-option, .action-menu > button { min-height: 44px; }
+}
+@media (prefers-reduced-motion: reduce) { .floating-menu { animation: none !important; } }

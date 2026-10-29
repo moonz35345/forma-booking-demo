@@ -1,0 +1,165 @@
+/* A quiet, consistent motion language for Forma. */
+:root {
+  --ease-flow: cubic-bezier(.22, 1, .36, 1);
+  --ease-soft: cubic-bezier(.4, 0, .2, 1);
+  --motion-fast: 180ms;
+  --motion-normal: 320ms;
+  --motion-slow: 520ms;
+}
+
+button, a, input, select, textarea {
+  transition: background-color var(--motion-fast) ease, border-color var(--motion-fast) ease,
+    color var(--motion-fast) ease, box-shadow var(--motion-normal) var(--ease-flow),
+    transform var(--motion-normal) var(--ease-flow), opacity var(--motion-fast) ease;
+}
+
+.main-content, .public-main { view-transition-name: workspace-content; }
+::view-transition { pointer-events: none; }
+::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+::view-transition-group(workspace-content) { animation-duration: 420ms; animation-timing-function: var(--ease-flow); }
+::view-transition-old(workspace-content) { animation: view-leave 160ms var(--ease-soft) both; }
+::view-transition-new(workspace-content) { animation: view-enter 420ms var(--ease-flow) both; }
+
+.main-content > .page-heading { animation: rise-in 550ms var(--ease-flow) both; }
+.main-content > .overview-toolbar { animation: rise-in 550ms 40ms var(--ease-flow) both; }
+.stats-grid > .stat-card { animation: rise-in 620ms var(--ease-flow) both; }
+.stats-grid > .stat-card:nth-child(2) { animation-delay: 45ms; }
+.stats-grid > .stat-card:nth-child(3) { animation-delay: 90ms; }
+.stats-grid > .stat-card:nth-child(4) { animation-delay: 135ms; }
+.flow-banner { animation: rise-in 650ms 90ms var(--ease-flow) both; }
+.dashboard-columns > .panel, .right-column > *, .calendar-panel, .customer-layout > *, .settings-grid > * {
+  animation: rise-in 650ms 130ms var(--ease-flow) both;
+}
+.right-column > :nth-child(2), .settings-grid > :nth-child(2) { animation-delay: 190ms; }
+.services-grid > .service-card { animation: rise-in 650ms var(--ease-flow) both; }
+.services-grid > .service-card:nth-child(3n + 2) { animation-delay: 60ms; }
+.services-grid > .service-card:nth-child(3n) { animation-delay: 120ms; }
+.calendar-grid, .history-panel { animation: soft-in 350ms var(--ease-flow) both; }
+.appointment-rows > tr { animation: row-in 380ms var(--ease-flow) both; }
+.appointment-rows > tr:nth-child(2) { animation-delay: 25ms; }
+.appointment-rows > tr:nth-child(3) { animation-delay: 50ms; }
+.appointment-rows > tr:nth-child(4) { animation-delay: 75ms; }
+.appointment-rows > tr:nth-child(5) { animation-delay: 100ms; }
+.appointment-rows > tr:nth-child(6) { animation-delay: 125ms; }
+tbody tr { transition: background-color 200ms ease; }
+.metric-number { display: inline-block; font-variant-numeric: tabular-nums; }
+.mini-bars i { transform-origin: bottom; animation: grow-bar 700ms var(--ease-flow) both; }
+.mini-bars i:nth-child(3n) { animation-delay: 60ms; }
+.mini-bars i:nth-child(3n + 1) { animation-delay: 120ms; }
+
+/* A shared indicator glides between navigation items instead of flashing. */
+.sidebar nav { position: relative; isolation: isolate; }
+.sidebar nav::before {
+  content: ''; position: absolute; z-index: -1; top: 0; left: 0; right: 0; height: 42px;
+  border-radius: 9px; background: #eaf0e2; border: 1px solid #dde7d1;
+  transform: translateY(calc(var(--active-index, 0) * 47px));
+  transition: transform 440ms var(--ease-flow), opacity 180ms ease;
+}
+.sidebar nav[data-active="false"]::before { opacity: 0; }
+.sidebar nav .nav-item.active { background: transparent; }
+.nav-item > svg:first-child { transition: transform 350ms var(--ease-flow), color 200ms ease; }
+.nav-item.active > svg:first-child { transform: scale(1.06); }
+.nav-item { border-radius: 9px; }
+.workspace, .booking-link-card { border-radius: 11px; }
+.workspace { transition: border-color 250ms ease, box-shadow 350ms var(--ease-flow); }
+.topbar { background: #fcfdf9dc; backdrop-filter: blur(16px); }
+.panel, .stat-card, .flow-banner, .popular-panel { border-radius: 12px; }
+.panel, .stat-card, .service-card, .popular-panel {
+  transition: box-shadow 420ms var(--ease-flow), border-color 320ms ease, transform 420ms var(--ease-flow);
+}
+.stat-card { background: linear-gradient(145deg, #fff 50%, #fafbf7); }
+.btn { border-radius: 8px; min-height: 36px; }
+.btn.primary { background: linear-gradient(150deg, #64744e, #53623f); border-color: #586843; box-shadow: inset 0 1px 0 #ffffff15, 0 2px 5px #35482414; }
+.btn svg, .flow-banner button svg, .team-link svg, .table-footer button svg, .popular-panel > button svg, .booking-link-card button svg {
+  transition: transform 350ms var(--ease-flow);
+}
+.btn:active:not(:disabled), .icon-btn:active, .time-grid button:active, .days-picker button:active { transform: scale(.97); transition-duration: 100ms; }
+.btn.primary:active:not(:disabled) { box-shadow: inset 0 2px 4px #27351c1a; }
+.icon-btn { border-radius: 8px; }
+.search-input, .date-control, .filter-select, .staff-filter {
+  transition: border-color 250ms ease, box-shadow 300ms ease, background-color 200ms ease;
+  border-radius: 8px;
+}
+.search-input:focus-within { border-color: #9dae85; background: #fdfefa; box-shadow: 0 0 0 3px #a7b89018; }
+.form-label input, .form-label select, .form-label textarea { border-radius: 8px; }
+.form-label input:focus, .form-label select:focus, .form-label textarea:focus { outline: none; border-color: #95a77b; box-shadow: 0 0 0 3px #9fb28320; }
+.segmented { border-radius: 9px; padding: 4px; }
+.segmented button { border-radius: 6px; }
+.segmented .selected { box-shadow: 0 2px 7px #3c502014; }
+.calendar-event { transition: box-shadow 250ms ease, filter 200ms ease, transform 300ms var(--ease-flow); border-radius: 7px; }
+
+/* Form steps resize in place; content enters independently of the outer shell. */
+.form-stage-shell { overflow: clip; transition: height 420ms var(--ease-flow); }
+.form-stage { display: flow-root; animation: stage-in 420ms var(--ease-flow) both; }
+.form-steps > span, .form-steps i { transition: background-color 300ms ease, color 300ms ease; }
+.form-steps > div { position: relative; overflow: hidden; }
+.form-steps > div::after { content: ''; position: absolute; inset: 0; background: #9bad80; transform: scaleX(0); transform-origin: left; transition: transform 500ms var(--ease-flow); }
+.form-steps:has(.done) > div::after { transform: scaleX(1); }
+.time-grid button { animation: slot-in 350ms var(--ease-flow) both; border-radius: 7px; }
+.time-grid button:nth-child(4n + 2) { animation-delay: 20ms; }
+.time-grid button:nth-child(4n + 3) { animation-delay: 40ms; }
+.time-grid button:nth-child(4n) { animation-delay: 60ms; }
+.time-grid button.selected { box-shadow: 0 3px 9px #465f2826; }
+.form-error { animation: soft-in 220ms ease both; }
+
+.modal[open] { animation: dialog-in 380ms var(--ease-flow) both; }
+.modal[open]::backdrop { animation: backdrop-in 300ms ease both; }
+.modal[data-closing="true"] { animation: dialog-out 180ms var(--ease-soft) both; pointer-events: none; }
+.modal[data-closing="true"]::backdrop { animation: backdrop-out 180ms ease both; }
+.modal { border-radius: 18px; box-shadow: 0 30px 100px #24331930, 0 4px 20px #2433190a; }
+.modal-heading { background: #fffffff0; backdrop-filter: blur(16px); }
+.notification-panel { transform-origin: 85% 0; animation: pop-in 300ms var(--ease-flow) both; border-radius: 12px; }
+.toast { animation: toast-arrive 430ms var(--ease-flow) both; border-radius: 12px; box-shadow: 0 12px 40px #35422720; }
+.public-main > .booking-intro { animation: rise-in 700ms var(--ease-flow) both; }
+.public-main > .public-booking { animation: rise-in 750ms 100ms var(--ease-flow) both; border-radius: 18px; }
+.public-booking { box-shadow: 0 16px 60px #3a51120a, 0 2px 8px #3a511104; }
+.confirmation { animation: rise-in 600ms var(--ease-flow) both; }
+.success-icon { animation: success-in 650ms 100ms var(--ease-flow) both; }
+.success-icon svg { stroke-dasharray: 60; animation: draw-check 650ms 250ms var(--ease-flow) both; }
+.confirmation-ticket { animation: rise-in 700ms 180ms var(--ease-flow) both; border-radius: 16px; }
+.loading > svg { animation: loading-breathe 1700ms ease-in-out infinite; }
+
+@media (hover: hover) and (pointer: fine) {
+  .stat-card:hover, .service-card:hover { transform: translateY(-3px); border-color: #d3dcc6; box-shadow: 0 9px 28px #344d180a, 0 2px 6px #344d1803; }
+  .service-card:hover .service-icon { transform: rotate(-6deg); }
+  .service-icon { transition: transform 450ms var(--ease-flow); }
+  .workspace:hover { border-color: #ccd7bd; box-shadow: 0 3px 12px #344d1808; }
+  .nav-item:hover > svg:first-child { transform: translateX(2px); }
+  .btn:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 4px 12px #3548240d; }
+  .btn.primary:hover:not(:disabled) { box-shadow: inset 0 1px 0 #ffffff20, 0 5px 14px #35482425; }
+  .btn:hover:not(:disabled) svg:last-child, .flow-banner button:hover svg, .team-link:hover svg, .table-footer button:hover svg, .popular-panel > button:hover svg, .booking-link-card button:hover svg { transform: translateX(3px); }
+  .time-grid button:hover:not(.selected) { transform: translateY(-2px); box-shadow: 0 3px 8px #3548240b; border-color: #b8c8a3; }
+  .calendar-event:hover { transform: translateY(-1px); box-shadow: 0 4px 12px #35482412; }
+  .brand:hover > svg { transform: rotate(12deg); }
+  .brand > svg { transition: transform 600ms var(--ease-flow); }
+}
+
+@media (max-width: 640px) {
+  .sidebar { transition: transform 420ms var(--ease-flow); box-shadow: 15px 0 50px #24331914; }
+  .sidebar-scrim { animation: backdrop-in 300ms ease both; }
+  .page-heading h1 { line-height: 1.2; }
+}
+
+@keyframes view-leave { to { opacity: 0; transform: translateY(-5px); } }
+@keyframes view-enter { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes rise-in { from { opacity: 0; translate: 0 12px; } to { opacity: 1; translate: 0 0; } }
+@keyframes soft-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes row-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes grow-bar { from { transform: scaleY(.15); opacity: .2; } to { transform: scaleY(1); } }
+@keyframes stage-in { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes slot-in { from { opacity: 0; translate: 0 5px; } to { opacity: 1; translate: 0 0; } }
+@keyframes dialog-in { from { opacity: 0; transform: translateY(18px) scale(.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes dialog-out { to { opacity: 0; transform: translateY(8px) scale(.98); } }
+@keyframes backdrop-in { from { background-color: #252e2000; backdrop-filter: blur(0); } to { background-color: #252e2060; backdrop-filter: blur(4px); } }
+@keyframes backdrop-out { to { background-color: #252e2000; backdrop-filter: blur(0); } }
+@keyframes pop-in { from { opacity: 0; transform: translateY(-5px) scale(.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes toast-arrive { from { opacity: 0; translate: 0 12px; scale: .97; } to { opacity: 1; translate: 0 0; scale: 1; } }
+@keyframes success-in { from { opacity: 0; transform: scale(.8); } to { opacity: 1; transform: scale(1); } }
+@keyframes draw-check { from { stroke-dashoffset: 60; } to { stroke-dashoffset: 0; } }
+@keyframes loading-breathe { 50% { opacity: .4; transform: scale(.94) rotate(8deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+  .stat-card:hover, .service-card:hover, .btn:hover, .calendar-event:hover, .time-grid button:hover, .nav-item:hover > svg:first-child { transform: none; }
+}
